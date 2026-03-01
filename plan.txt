@@ -29,6 +29,9 @@ salmon-run-tool/
 - 武器4種を画像グリッドで表示（黒背景、ホバーで拡大）
 - オカシラ予告表示（ロケールから取得）
 - GitHub Pages で静的配信（ビルド不要・Vanilla JS）
+- ヘッダー・ファビコンに splatoon3.ink の coop.svg アイコンを使用
+- GitHub Actions で毎時スケジュールデータを自動更新
+- 公開URL: https://villhell.github.io/salmon-run-tool/
 
 オカシラ日本語名（ロケールファイルから取得）:
 - Cohozuna → ヨコヅナ
