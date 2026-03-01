@@ -44,6 +44,15 @@ header h1 {
   font-size: 1.5rem;
   color: var(--accent-orange-light);
   letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
 }
 
 #last-updated {
