@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:splatoon3.ink)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(node:*)",
+      "WebSearch",
+      "WebFetch(domain:blog.northwestw.in)",
+      "Bash(mitmproxy:*)",
+      "Bash(ipconfig)",
+      "Bash(python:*)",
+      "Bash(gh auth:*)"
+    ]
+  }
+}

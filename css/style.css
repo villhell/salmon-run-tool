@@ -1,0 +1,225 @@
+:root {
+  --bg: #121a12;
+  --surface: #1e2b1e;
+  --surface-alt: #263326;
+  --accent-orange: #f57c00;
+  --accent-orange-light: #ffb74d;
+  --text: #e8f5e8;
+  --text-muted: #8aab8a;
+  --border: #2e3f2e;
+  --badge-regular: #2e7d32;
+  --badge-regular-text: #c8e6c9;
+  --badge-bigrun: #b71c1c;
+  --badge-bigrun-text: #ffcdd2;
+  --badge-eggstra: #f9a825;
+  --badge-eggstra-text: #1a1200;
+  --current-glow: rgba(245, 124, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--surface);
+  border-bottom: 2px solid var(--accent-orange);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--accent-orange-light);
+  letter-spacing: 0.03em;
+}
+
+#last-updated {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section h2 {
+  font-size: 1.1rem;
+  color: var(--accent-orange-light);
+  border-left: 4px solid var(--accent-orange);
+  padding-left: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+/* Shift cards grid */
+#current-shift-content,
+#upcoming-shifts-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.shift-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.shift-card.current {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 16px var(--current-glow);
+  background-color: var(--surface-alt);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shift-badge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: bold;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-regular {
+  background-color: var(--badge-regular);
+  color: var(--badge-regular-text);
+}
+
+.badge-bigrun {
+  background-color: var(--badge-bigrun);
+  color: var(--badge-bigrun-text);
+}
+
+.badge-eggstra {
+  background-color: var(--badge-eggstra);
+  color: var(--badge-eggstra-text);
+}
+
+.time-range {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stage-name {
+  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* 武器 - 常に4列グリッド */
+.weapons {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.weapons li {
+  aspect-ratio: 1;
+}
+
+.weapon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+  border: none;
+  border-radius: 0;
+  padding: 4px;
+  display: block;
+  transition: transform 0.15s;
+}
+
+.weapon-img:hover {
+  transform: scale(1.12);
+  z-index: 1;
+  position: relative;
+}
+
+.weapon-name {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.15em 0.5em;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.boss-notice {
+  font-size: 0.85rem;
+  color: var(--accent-orange-light);
+}
+
+.countdown {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.countdown-value {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: var(--accent-orange-light);
+  font-weight: bold;
+}
+
+.start-time {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.no-shift,
+.error {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  grid-column: 1 / -1;
+}
+
+.error {
+  color: #ef9a9a;
+}
+
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  #current-shift-content,
+  #upcoming-shifts-content {
+    grid-template-columns: 1fr;
+  }
+}
